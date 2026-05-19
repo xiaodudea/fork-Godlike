@@ -7,6 +7,11 @@ on:
         description: '指定ID（留空运行全部）'
         required: false
         default: ''
+  schedule:
+    # 第一条规则：在 0, 3, 6, 9, 12, 15, 18, 21 点的 00 分运行
+    - cron: '0 0,3,6,9,12,15,18,21 * * *'
+    # 第二条规则：在 1, 4, 7, 10, 13, 16, 19, 22 点的 30 分运行
+    - cron: '30 1,4,7,10,13,16,19,22 * * *'
 
 permissions:
   actions: write
